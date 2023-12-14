@@ -1,7 +1,7 @@
 import streamlit as st
 # pip install streamlit-extras
 from streamlit_option_menu import option_menu
-from streamlit_extras.dataframe_explorer import dataframe_explorer
+# from streamlit_extras.dataframe_explorer import dataframe_explorer
 import pandas as pd
 import csv
 import json
@@ -219,7 +219,7 @@ if menu == 'Condicionais':
         # url = "https://docs.google.com/spreadsheets/d/1JDy9md2VZPz4JbYtRPJLs81_3jUK47nx6GYQjgU8qNY/edit?usp=sharing"
 
         if st.button('Verificar', key='check'):
-            st.write(st.session_state['verify'])
+            
             df_condicionais_gsheet = importa_google_sheet(url)
             st.dataframe(df_condicionais_gsheet, use_container_width=True, hide_index=True, column_order=[
                          "linha", "Campo", "Opção", "Exibe o campo", "Obrigatoriedade"])
