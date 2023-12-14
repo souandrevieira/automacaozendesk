@@ -9,7 +9,7 @@ from datetime import datetime
 import zendesklib as zl
 
 
-st.set_page_config(page_title="Meu site 1", layout="wide")
+st.set_page_config(page_title="Automações Zendesk", layout="wide")
 
 hide_st_style = """
             <style>
