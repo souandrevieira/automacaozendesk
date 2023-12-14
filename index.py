@@ -1,6 +1,6 @@
 import streamlit as st
 # pip install streamlit-extras
-# from streamlit_extras.dataframe_explorer import dataframe_explorer
+from streamlit_extras.dataframe_explorer import dataframe_explorer
 import pandas as pd
 import csv
 import json
@@ -18,8 +18,8 @@ hide_st_style = """
             header {visibility: hidden;}
             </style>
             """
-st.markdown(hide_st_style, unsafe_allow_html=True)  # Remove as mancações do Streamlit e o menu
-
+st.markdown(hide_st_style,
+            unsafe_allow_html=True)  # Remove as mancações do Streamlit e o menu
 
 
 css_upload = '''
