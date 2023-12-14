@@ -1,6 +1,6 @@
 import streamlit as st
 # pip install streamlit-extras
-from streamlit_extras.dataframe_explorer import dataframe_explorer
+# from streamlit_extras.dataframe_explorer import dataframe_explorer
 import pandas as pd
 import csv
 import json
@@ -33,7 +33,7 @@ css_upload = '''
 
 st.markdown(css_upload, unsafe_allow_html=True)
 
-st.sidebar.success('Sidebar ok')  # cria a barra lateral
+# st.sidebar.success('Sidebar ok')  # cria a barra lateral
 
 st.title("Importar CSV")
 # st.subheader("segundo texto para um subtitulo")
