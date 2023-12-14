@@ -104,16 +104,20 @@ if menu == 'Autenticação':
     st.session_state['senha'] = st.text_input('senha', type="password", help="Insira a senha ou token de acesso",
                                               label_visibility='visible', value=st.session_state['senha'] if 'senha' in st.session_state else '')
     if st.button('Testar dados de Autenticação'):
-        end_point = st.session_state['instancia'] + '/api/v2/account/settings'
-        response = requests.get(
-            end_point, auth=(st.session_state['login'], st.session_state['senha']))
-        if response.status_code == 200:
-            # st.write(response.json())
-            st.success('Autenticação Validada',)
+        if 'instancia' not in st.session_state:
+            end_point = st.session_state['instancia'] + \
+                '/api/v2/account/settings'
+            response = requests.get(
+                end_point, auth=(st.session_state['login'], st.session_state['senha']))
+            if response.status_code == 200:
+                # st.write(response.json())
+                st.success('Autenticação Validada',)
+            else:
+                erro_autenticacao = dict(response.json())
+                st.error(
+                    'Autenticação falhou, verifique os dados de instancia, login e senha'+'\n\n'+str(erro_autenticacao['error']))
         else:
-            erro_autenticacao = dict(response.json())
-            st.error(
-                'Autenticação falhou, verifique os dados de instancia, login e senha'+'\n\n'+str(erro_autenticacao['error']))
+            st.error('Instancia não informada')
 
 if menu == 'Formulário':
     form_zd = zl.busca_formularios(
