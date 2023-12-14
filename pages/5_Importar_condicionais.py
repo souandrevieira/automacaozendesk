@@ -88,14 +88,14 @@ menu = option_menu(None, ["Autenticação", "Formulário", "Condicionais",
                    "Importação"], default_index=0, orientation="horizontal")
 
 if menu == 'Autenticação':
-    if 'login' not in st.session_state:
-        st.session_state.login = "ps@aktienow.com"
+    # if 'login' not in st.session_state:
+    #     st.session_state.login = "ps@aktienow.com"
 
-    if 'instancia' not in st.session_state:
-        st.session_state.instancia = "https://con-aktienow.zendesk.com"
+    # if 'instancia' not in st.session_state:
+    #     st.session_state.instancia = "https://con-aktienow.zendesk.com"
 
-    if 'senha' not in st.session_state:
-        st.session_state.senha = "#ps@2020"
+    # if 'senha' not in st.session_state:
+    #     st.session_state.senha = "#ps@2020"
 
     st.session_state['instancia'] = st.text_input(
         'Instancia', value=st.session_state['instancia'] if 'instancia' in st.session_state else '')
@@ -219,7 +219,7 @@ if menu == 'Condicionais':
         # url = "https://docs.google.com/spreadsheets/d/1JDy9md2VZPz4JbYtRPJLs81_3jUK47nx6GYQjgU8qNY/edit?usp=sharing"
 
         if st.button('Verificar', key='check'):
-            
+
             df_condicionais_gsheet = importa_google_sheet(url)
             st.dataframe(df_condicionais_gsheet, use_container_width=True, hide_index=True, column_order=[
                          "linha", "Campo", "Opção", "Exibe o campo", "Obrigatoriedade"])
