@@ -35,17 +35,19 @@ st.markdown(css_upload, unsafe_allow_html=True)
 
 # st.sidebar.success('Sidebar ok')  # cria a barra lateral
 
-st.title("Importar CSV")
-# st.subheader("segundo texto para um subtitulo")
-# st.write("Testando um link [Link para o Google](http://www.google.com)")
+st.title('Ferramentas de Automação para Zendesk')
+st.header('Selecione uma das funções no Menu lateral e siga as instruções')
+# st.title("Importar CSV")
+# # st.subheader("segundo texto para um subtitulo")
+# # st.write("Testando um link [Link para o Google](http://www.google.com)")
 
-# instancia = st.text_input('Instancia')
-# login = st.text_input('Login')
-# senha = st.text_input('senha')
+# # instancia = st.text_input('Instancia')
+# # login = st.text_input('Login')
+# # senha = st.text_input('senha')
 
-# st.session_state['instancia'] = instancia
+# # st.session_state['instancia'] = instancia
 
-uploaded_file = st.file_uploader(label='Faça o upload do arquivo2', type='csv')
-if uploaded_file is not None:
-    dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
+# uploaded_file = st.file_uploader(label='Faça o upload do arquivo2', type='csv')
+# if uploaded_file is not None:
+#     dataframe = pd.read_csv(uploaded_file)
+#     st.write(dataframe)
