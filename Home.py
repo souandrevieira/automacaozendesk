@@ -16,27 +16,29 @@ hide_st_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;} 
             header {visibility: hidden;}
+            viewerBadge_container__r5tak styles_viewerBadge__CvC9N {visibility: hidden;}
             </style>
             """
 st.markdown(hide_st_style,
             unsafe_allow_html=True)  # Remove as mancações do Streamlit e o menu
 
+st.title('Ferramentas de Automação para Zendesk')
+st.header('Selecione uma das funções no Menu lateral e siga as instruções')
 
-css_upload = '''
-<style>
-[data-testid="stFileUploadDropzone"] div div::before {content:"Clique para selecionar o arquivo ou arraste e solte aqui"}
-[data-testid="stFileUploadDropzone"] div div span{display:none;}
-[data-testid="stFileUploadDropzone"] div div::after {color:red; font-size: .8em; content:"Tamanho maximo de 200MB"}
-[data-testid="stFileUploadDropzone"] div div small{display:none;}
-</style>
-'''
 
-st.markdown(css_upload, unsafe_allow_html=True)
+# css_upload = '''
+# <style>
+# [data-testid="stFileUploadDropzone"] div div::before {content:"Clique para selecionar o arquivo ou arraste e solte aqui"}
+# [data-testid="stFileUploadDropzone"] div div span{display:none;}
+# [data-testid="stFileUploadDropzone"] div div::after {color:red; font-size: .8em; content:"Tamanho maximo de 200MB"}
+# [data-testid="stFileUploadDropzone"] div div small{display:none;}
+# </style>
+# '''
+
+# st.markdown(css_upload, unsafe_allow_html=True)
 
 # st.sidebar.success('Sidebar ok')  # cria a barra lateral
 
-st.title('Ferramentas de Automação para Zendesk')
-st.header('Selecione uma das funções no Menu lateral e siga as instruções')
 # st.title("Importar CSV")
 # # st.subheader("segundo texto para um subtitulo")
 # # st.write("Testando um link [Link para o Google](http://www.google.com)")
