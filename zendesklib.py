@@ -162,6 +162,13 @@ def busca_campos(instancia,login,senha):
     campo_zendesk = campo_zendesk['ticket_fields']
     return campo_zendesk
 
+def busca_sla_filters(instancia,login,senha):
+    url_sla_filter = instancia + "/api/v2/slas/policies/definitions"
+    response_api = requests.get(url_sla_filter, auth=(login, senha))
+    trata_resposta_api(response_api)
+    sla_filter = response_api.json()
+    sla_filter = sla_filter['definitions']['all']
+    return sla_filter
 
 def busca_gatilhos(instancia,login,senha,active=True):
     #Função que busca gatilhos na instancia utilizando busca com cursor
