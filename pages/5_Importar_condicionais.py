@@ -102,7 +102,7 @@ if menu == 'Autenticação':
     #     st.session_state.senha = "#ps@2020"
 
     st.session_state['instancia'] = st.text_input(
-        'Instancia', value=st.session_state['instancia'] if 'instancia' in st.session_state else '')
+        'Instância', value=st.session_state['instancia'] if 'instancia' in st.session_state else '')
     st.session_state['login'] = st.text_input(
         'Login', value=st.session_state['login'] if 'login' in st.session_state else '', help='Para conectar usando o Token, não esqueca de adicionar **/token** depois do e-mail')
     st.session_state['senha'] = st.text_input('senha', type="password", help="Insira a senha ou token de acesso",
