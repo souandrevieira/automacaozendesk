@@ -62,6 +62,10 @@ def extract_names(options):
         return ', '.join(option['name'] for option in options)
     return None
 
+def extract_value(options):
+    if isinstance(options, list) and len(options) > 0:
+        return ', '.join(option['value'] for option in options)
+    return None
 
 def extract_value(options):
     if isinstance(options, list) and len(options) > 0:
@@ -111,7 +115,7 @@ if menu == 'Autenticação':
                 end_point, auth=(st.session_state['login'], st.session_state['senha']))
             if response.status_code == 200:
                 # st.write(response.json())
-                st.success('Autenticação Validada',)
+                st.success('Autenticação Validada')
             else:
                 erro_autenticacao = dict(response.json())
                 st.error(
